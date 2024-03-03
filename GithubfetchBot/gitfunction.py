@@ -27,7 +27,5 @@ class GetGitHub:
     
   #   return response.json()
 
-x=GetGitHub.get_repo("python")
-pprint.pprint(x)
-  
+
 
