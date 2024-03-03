@@ -1,7 +1,9 @@
-import gitfunction 
 
-class safegitdata:
-  async def fromatingdata(text):
+global alldata
+alldata = []
+class Safegitdata:
+   def formatingdata(text):
+    
     for item in text["items"]:
         listgit=[
         f"Name: {item['name']}",
@@ -11,5 +13,7 @@ class safegitdata:
         f"Description: {item['description']}",
         f"Link: {item['html_url']}"
      ]
-        return listgit
+        alldata.append(listgit)
+        
+    return alldata
 
