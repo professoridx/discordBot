@@ -1,7 +1,7 @@
 import requests
 import pprint
 from dotenv import load_dotenv
-from stractdata import Safegitdata
+# from stractdata import Safegitdata
 import os 
 load_dotenv()
 token = os.getenv("GITHUB_TOKEN")
@@ -13,9 +13,8 @@ class GetGitHub:
     url = f"https://api.github.com/search/repositories?q=language:{text}&sort=stars"
 
     response = requests.get(url, headers=headers).json()
-    data=Safegitdata.formatingdata(response)
-    
-    return data
+   
+    return response
     
 
 
@@ -28,5 +27,7 @@ class GetGitHub:
     
   #   return response.json()
 
+x=GetGitHub.get_repo("python")
+pprint.pprint(x)
   
 
