@@ -10,12 +10,7 @@ import settings
 load_dotenv()
 TOKEN:Final[str] = os.getenv('DISCORD_TOKEN')
     
-intentes:discord.Intents=discord.Intents.default()
-
-intentes.messages=True
-intentes.reactions=True
-intentes.presences=True
-intentes.typing=True
+intentes:discord.Intents=discord.Intents.all()
 
 client:discord.Client=discord.Client(intents=intentes)
 
@@ -31,7 +26,9 @@ def run_bot()->None:
   async def on_ready():
     logger.info(f'user:{bot.user.name}  (ID:{bot.user.id}) has connected to Discord!')
   
-  @bot.command()
+  @bot.command(
+    help="Responds with 'Pong!' and the latency in milliseconds."
+  )
   async def ding(ctx):
     await ctx.send(f'Pong! {round(bot.latency*1000)}ms')
     
@@ -42,3 +39,5 @@ def run_bot()->None:
     
 if __name__=="__main__":
   run_bot()
+
+# কোডিং চাঙ্গে আমি ভাষী গাঙে 
