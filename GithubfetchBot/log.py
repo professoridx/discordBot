@@ -1,4 +1,5 @@
 from logging.config import dictConfig
+import logging
 
 LOGGING_CONFIG = {
   "version": 1,
