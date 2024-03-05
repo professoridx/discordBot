@@ -14,18 +14,19 @@ LOGGING_CONFIG = {
     "console": {
       "level": "DEBUG",
       "class": "logging.StreamHandler",
-      "formatter": "simple"},
+      "formatter": "standard"},
     
     "console2": {
       "level": "Warning",
       "class": "logging.StreamHandler",
-      "formatter": "simple"},
+      "formatter": "standard"},
     
     "file": {
       'level': 'INFO',
       'class': 'logging.FileHandler',
       'filename': 'logs.log',
       'mode': 'w',
+      'formatter': 'standard',
       
       },
     
@@ -37,6 +38,8 @@ LOGGING_CONFIG = {
       'handlers': ['handlers'],
       "level": "INFO",
       "propagate": False,
+      'formatter': 'verbose',
+      
     },
     "discord": {
       'handlers': ['console2', 'file'],
